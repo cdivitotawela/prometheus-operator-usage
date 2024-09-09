@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: demo
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: demo
+  template:
+    metadata:
+      labels:
+        app: demo
+        burn: '24.9.1-RC1'
+    spec:
+      containers:
+      - name: demo
+        image: quay.io/brancz/prometheus-example-app:v0.5.0
+        ports:
+        - name: web
+          containerPort: 8080

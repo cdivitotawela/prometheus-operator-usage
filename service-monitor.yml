@@ -1,0 +1,14 @@
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  name: demo
+  labels:
+    # This label should match the serviceMonitorSelector configured in Promtheus object
+    release: prom
+spec:
+  selector:
+    matchLabels:
+      app: demo
+  endpoints:
+  - port: web
+  podTargetLabels: ["burn"]
