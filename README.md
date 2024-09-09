@@ -53,7 +53,7 @@ kubectl port-forward -n monitoring svc/prom-kube-prometheus-stack-prometheus 909
 Check the Prometheus Pod logs to see that configuration reload. Access the Prometheus web via https://127.0.0.1:9090/
 Navigate to Status->Targets and Demo app has been added as a target.
 
-# Configure Pod Labels to be Prometheus Labels
+## Configure Pod Labels to be Prometheus Labels
 
 Any Pod labels aren't included as Prometheus labels. If any of the Pod labels need to be included in Prometheus, 
 the ServiceMonitor should be configured with podTargetLabels. Check the [service-monitor.yml](service-monitor.yml)
@@ -61,7 +61,7 @@ which has the configuration `podTargetLabels: ["burn"]`. This will add Pod label
 
 
 
-## References
+# References
 - [Prometheus Operator User Guide Getting Started](https://github.com/prometheus-operator/prometheus-operator/blob/main/Documentation/user-guides/getting-started.md)
 - [Service Monitor Spec](https://github.com/prometheus-operator/prometheus-operator/blob/main/Documentation/api.md#monitoring.coreos.com/v1.Prometheus)
 
